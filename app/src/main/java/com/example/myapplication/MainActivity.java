@@ -44,9 +44,11 @@ public class MainActivity extends AppCompatActivity{
                Noms.add(names);
                lv.setAdapter(adapter);
                adapter.notifyDataSetChanged();
+               edittext.setText("");
            }
        });
 
-       }
+
+   }
 
 }
