@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -22,6 +23,8 @@ public class Time extends AppCompatActivity {
     private TextView TextTimer2;
     private Button start1;
     private Button start2;
+    private Button next;
+    private Button menu;
     private CountDownTimer Timer1;
     private CountDownTimer Timer2;
     private boolean TimerRunning1;
@@ -42,6 +45,9 @@ public class Time extends AppCompatActivity {
 
         start1 = findViewById(R.id.start1);
         start2 = findViewById(R.id.start2);
+
+        next = findViewById(R.id.next);
+        menu = findViewById(R.id.menu);
 
 
         Joueur = getIntent().getStringArrayListExtra("Joueurs"); //Récupération de la liste de joueurs saisie dans MainActivity via l'Intent
@@ -79,6 +85,24 @@ public class Time extends AppCompatActivity {
         });
 
 
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent PlayIntent = new Intent(Time.this, Dual.class);
+                PlayIntent.putStringArrayListExtra("Joueurs", Joueur);
+                startActivity(PlayIntent);
+
+            }
+        });
+
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent PlayIntent = new Intent(Time.this, MainActivity.class);
+                startActivity(PlayIntent);
+
+            }
+        });
 
     }
 
@@ -104,6 +128,9 @@ public class Time extends AppCompatActivity {
             public void onTick(long l) {
                 TimeLeft1 = l;
                 updateCountDownText(TimeLeft1,TextTimer1);
+                if(TimerRunning2) {
+                    pauseTimer2();
+                }
             }
 
             @Override
@@ -129,6 +156,9 @@ public class Time extends AppCompatActivity {
             public void onTick(long l) {
                 TimeLeft2 = l;
                 updateCountDownText(TimeLeft2,TextTimer2);
+                if(TimerRunning1) {
+                    pauseTimer1();
+                }
             }
 
             @Override

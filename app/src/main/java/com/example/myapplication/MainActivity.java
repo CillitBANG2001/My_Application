@@ -60,7 +60,9 @@ public class MainActivity extends AppCompatActivity{
 
                Intent PlayIntent = new Intent(MainActivity.this, Dual.class);
                PlayIntent.putStringArrayListExtra("Joueurs",Noms);
+               Noms = new ArrayList<String>();
                startActivity(PlayIntent);
+
 
            }
 

@@ -48,6 +48,7 @@ public class Dual extends AppCompatActivity {
                 Intent PlayIntent = new Intent(Dual.this, Time.class);
                 PlayIntent.putStringArrayListExtra("Joueurs",Joueur);
                 PlayIntent.putStringArrayListExtra("Duel",Duel);
+                Duel = new ArrayList<String>();
                 startActivity(PlayIntent);
 
             }
