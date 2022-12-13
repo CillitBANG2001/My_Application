@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="questions" >
+
+        <item>"Le pire : Hilter ou Staline ?"</item>
+        <item>"100% Nucléaire ou énergies vertes ?"</item>
+        <item>"Poutine : Réincarnation de Lucifer ou implacable gigachad au service des siens?"</item>
+        <item>"Trump : inconscient mégalomane ou génial buisness-superman?"</item>
+        <item>"La Corrida : éternelle tradition ou archaïque barbarie?"</item>
+        <item>"Emmanuel Macron : Sauveur de la France ou irrisible foutriquet?"</item>
+        <item>"Sucer c'est tromper ?"</item>
+        <item>"Face au manque de respect, la violence est elle une solution excusable?"</item>
+        <item>"La vérité est-elle toujours bonne à dire?"</item>
+        <item>"Ordinateurs et tablettes pour les enfants : Outil pédagogique ou abrutissant frein au développement?"</item>
+
+
+
+    </string-array>
+
+</resources>
