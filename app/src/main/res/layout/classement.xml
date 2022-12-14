@@ -39,6 +39,9 @@
         app:layout_constraintLeft_toRightOf="@id/scores"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="30sp"
+
         />
 
     <ListView
@@ -49,6 +52,9 @@
         app:layout_constraintLeft_toRightOf="@id/names"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="30sp"
+
         />
 
     </LinearLayout>
