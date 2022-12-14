@@ -3,7 +3,7 @@
 
     <string-array name="questions" >
 
-        <item>"Le pire : Hilter ou Staline ?"</item>
+        <item>"Staline : Pire qu'Hitler?"</item>
         <item>"100% Nucléaire ou énergies vertes ?"</item>
         <item>"Poutine : Réincarnation de Lucifer ou implacable gigachad au service des siens?"</item>
         <item>"Trump : inconscient mégalomane ou génial buisness-superman?"</item>
@@ -13,6 +13,10 @@
         <item>"Face au manque de respect, la violence est elle une solution excusable?"</item>
         <item>"La vérité est-elle toujours bonne à dire?"</item>
         <item>"Ordinateurs et tablettes pour les enfants : Outil pédagogique ou abrutissant frein au développement intellectuel?"</item>
+        <item>"Couple 20-40 ans : L'amour sans frontières ou sordide lubie?"</item>
+        <item>"Immigration : Import de richesse culturelle ou grand remplacement?"</item>
+        <item>"Marijuana : Outil de récréatif de développement cognitif ou poison de la jeunesse ?"</item>
+
 
 
 

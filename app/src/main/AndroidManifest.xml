@@ -36,6 +36,18 @@
         </intent-filter>
         </activity>
 
+        <activity android:name="com.example.myapplication.WinLose" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.FOURTH" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.example.myapplication.Classement" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.FIFTH" />
+            </intent-filter>
+        </activity>
+
 
     </application>
 

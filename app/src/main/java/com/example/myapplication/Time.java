@@ -18,7 +18,8 @@ public class Time extends AppCompatActivity {
     ArrayList<String> Joueur;
     static ArrayList<String> Duel = new ArrayList<>();
     TextView Question;
-    private static final long START_TIME_IN_MS = 60000;
+    static ArrayList<Integer> DuelIndex = new ArrayList<>();
+    private static final long START_TIME_IN_MS = 30000;
     private TextView TextTimer1;
     private TextView TextTimer2;
     private Button start1;
@@ -31,6 +32,7 @@ public class Time extends AppCompatActivity {
     private boolean TimerRunning2;
     private long TimeLeft1 = START_TIME_IN_MS;
     private long TimeLeft2 = START_TIME_IN_MS;
+    private ArrayList<Integer> Score = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +52,9 @@ public class Time extends AppCompatActivity {
         menu = findViewById(R.id.menu);
 
 
+        Score = getIntent().getIntegerArrayListExtra("Score"); //Récupération des Scores des joueurs
         Joueur = getIntent().getStringArrayListExtra("Joueurs"); //Récupération de la liste de joueurs saisie dans MainActivity via l'Intent
-
+        DuelIndex = getIntent().getIntegerArrayListExtra("DuelIndex"); //Récupération de l'index des deux joueurs sélectionnés
         Duel = getIntent().getStringArrayListExtra("Duel"); //Récupération des deux joueurs sélectionnés
         Question.setText(getRandomQuestion());
         player1.setText(Duel.get(0));  //Affichage des duellistes dans le layout
@@ -88,8 +91,11 @@ public class Time extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent PlayIntent = new Intent(Time.this, Dual.class);
+                Intent PlayIntent = new Intent(Time.this, WinLose.class);
                 PlayIntent.putStringArrayListExtra("Joueurs", Joueur);
+                PlayIntent.putStringArrayListExtra("Duel", Duel);
+                PlayIntent.putIntegerArrayListExtra("Score",Score);
+                PlayIntent.putIntegerArrayListExtra("DuelIndex", DuelIndex);
                 startActivity(PlayIntent);
 
             }

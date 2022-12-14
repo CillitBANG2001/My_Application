@@ -23,8 +23,11 @@ public class MainActivity extends AppCompatActivity{
     EditText edittext;
     Button btnAdd;
     Button btnPlay;
+    ArrayList<Integer> Score = new ArrayList<>();
+    int NbJ;
 
-   @Override
+
+    @Override
    protected void onCreate(Bundle savedInstanceState) {
        super.onCreate(savedInstanceState);
        setContentView(R.layout.accueil);
@@ -41,12 +44,14 @@ public class MainActivity extends AppCompatActivity{
                Noms /* the List<T> contents */);
 
 
+
        btnAdd.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
 
                String names = edittext.getText().toString();
                Noms.add(names);
+               NbJ+=1;
                lv.setAdapter(adapter);
                adapter.notifyDataSetChanged();
                edittext.setText("");
@@ -58,8 +63,15 @@ public class MainActivity extends AppCompatActivity{
            public void onClick(View v) {
 
 
+               for(int i=0; i<NbJ;i++){
+                   Score.add(1);
+               }
+
                Intent PlayIntent = new Intent(MainActivity.this, Dual.class);
                PlayIntent.putStringArrayListExtra("Joueurs",Noms);
+               PlayIntent.putIntegerArrayListExtra("Score",Score);
+
+
                Noms = new ArrayList<String>();
                startActivity(PlayIntent);
 
